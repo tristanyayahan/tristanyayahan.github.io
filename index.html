@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/png" href="assets/images/logo_b.png">
-
 </head>
-<?php session_start(); ?>
 <body>
 
 <!-- Navbar -->
@@ -41,18 +39,6 @@
     </div>
   </div>
 </nav>
-
-
-<?php if (isset($_SESSION['alert'])): ?>
-    <div class="alert <?php echo $_SESSION['alert']; ?>" id="alertBox">
-        <?php if ($_SESSION['alert'] == "success"): ?>
-            ✅ Message sent successfully!
-        <?php else: ?>
-            ❌ Failed to send message. Please try again later.
-        <?php endif; ?>
-    </div>
-    <?php unset($_SESSION['alert']); ?>
-<?php endif; ?>
 
 <!-- Header -->
 <header class="hero-header text-white py-5">
@@ -219,9 +205,8 @@
         
           </div>
 
-          <!-- Show only if more than 4 certificates -->
           <div class="mt-3">
-            <a href="certificates.php" class="btn btn-link p-0">See More &raquo;</a>
+            <a href="certificates.html" class="btn btn-link p-0">See More &raquo;</a>
           </div>
         </div>
       </div>
@@ -235,7 +220,6 @@
   <div class="container">
     <h2 class="text-center mb-4">Projects</h2>
 
-
     <div class="row">
       <div class="col-md-4">
         <div class="card shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
@@ -245,9 +229,7 @@
             <p class="card-text">Our thesis project, “Enhanced Compression Time Efficiency of Brain MRI Fractal Image Compression 
               Using CNN-Guided and KD-Tree Optimized Encoding,” introduces an application that helps hospitals efficiently compress 
               and store brain MRI images. By combining convolutional neural networks (CNN) with KD-tree optimization, our system 
-              speeds up the compression process while maintaining high image quality. This approach ensures that medical images 
-              remain accurate for diagnosis, while also reducing storage requirements and improving accessibility within hospital 
-              data systems.</p>
+              speeds up the compression process while maintaining high image quality.</p>
             <p class="mb-1"><strong>Tech Stack:</strong></p>
             <ul class="list-inline">
               <li class="list-inline-item">Python</li>
@@ -269,12 +251,7 @@
             <h5 class="card-title">Apex Alliance: Building Inventory Management System</h5>
             <p class="card-text">This project proposes the development of a Building Inventory System for Batangas State University - 
               The National Engineering University, Alangilan Campus. The system provides a web-based platform for efficiently tracking 
-              and managing buildings, rooms, and assets, reducing the risks of manual inventory methods while supporting accurate 
-              decision-making. Developed using the Rapid Application Development (RAD) approach, it ensures active user collaboration 
-              and quick iteration of features. With role-based access for admins, staff, and guests, the system offers real-time 
-              analytics, PDF report generation, and a user-friendly interface built on Node.js, React.js, and MongoDB. In this project, 
-              my role is as one of the back-end developers, focusing on building and maintaining the server-side logic and database 
-              integration to support the system’s functionality.</p>
+              and managing buildings, rooms, and assets.</p>
             <p class="mb-1"><strong>Tech Stack:</strong></p>
             <ul class="list-inline">
               <li class="list-inline-item">Node.js</li>
@@ -287,45 +264,7 @@
           </div>
         </div>
       </div>
-      <!-- add new project
-      <div class="col-md-4">
-        <div class="card shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-          <img src="assets/images/___" class="card-img-top" alt="___">
-          <div class="card-body">
-            <h5 class="card-title">___</h5>
-            <p class="card-text">___</p>
-            <p class="mb-1"><strong>Tech Stack:</strong></p>
-            <ul class="list-inline">
-              <li class="list-inline-item">___</li>
-              <li class="list-inline-item">___</li>
-            </ul>
-            <a href="___" class="btn btn-primary" target="_blank">View on GitHub</a>
-          </div>
-        </div>
-      </div>
     </div>
-    -->
-
-    <!-- add projects in new row
-    <div class="row mt-4">
-      <div class="col-md-4">
-        <div class="card shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-          <img src="assets/images/___" class="card-img-top" alt="___">
-          <div class="card-body">
-            <h5 class="card-title">___</h5>
-            <p class="card-text">___</p>
-            <p class="mb-1"><strong>Tech Stack:</strong></p>
-            <ul class="list-inline">
-              <li class="list-inline-item">___</li>
-              <li class="list-inline-item">___</li>
-            </ul>
-            <a href="___" class="btn btn-primary" target="_blank">View on GitHub</a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    -->
 
   </div>
 </section>
@@ -334,7 +273,7 @@
 <section id="contact" class="bg-light py-5">
   <div class="container">
     <h2 class="text-center mb-4">Contact Me</h2>
-    <form action="contact.php" method="POST" class="w-75 mx-auto">
+    <form class="w-75 mx-auto">
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" required>
