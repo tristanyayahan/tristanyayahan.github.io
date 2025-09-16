@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tristan Anyayahan</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/logo_b.png">
+
+</head>
+<?php session_start(); ?>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <!-- Replace text with logo -->
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/logo_w.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Tech Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#footer">Contacts</a></li>
+      </ul>
+
+      <!-- ☀️ Light/🌙 Dark Switch -->
+      <button id="themeToggle" class="btn btn-sm btn-outline-light ms-3">
+        ☀️
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<?php if (isset($_SESSION['alert'])): ?>
+    <div class="alert <?php echo $_SESSION['alert']; ?>" id="alertBox">
+        <?php if ($_SESSION['alert'] == "success"): ?>
+            ✅ Message sent successfully!
+        <?php else: ?>
+            ❌ Failed to send message. Please try again later.
+        <?php endif; ?>
+    </div>
+    <?php unset($_SESSION['alert']); ?>
+<?php endif; ?>
+
+<!-- Header -->
+<header class="hero-header text-white py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left: Profile Image -->
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <img 
+          src="assets/images/grad_pic1.JPG" 
+          alt="Tristan Anyayahan" 
+          class="shadow-lg" 
+          width="200" 
+          onmouseover="this.src='assets/images/grad_pic2.JPG'" 
+          onmouseout="this.src='assets/images/grad_pic1.JPG'">
+      </div>
+
+      <!-- Right: Intro Text -->
+      <div class="col-md-8 text-center text-md-start">
+        <h1 class="fw-bold">Hello, I'm Tristan Anyayahan</h1>
+        <p class="fw-bold">Entry-Level Software & Data Specialist | Frontend • Backend • Analytics</p>
+        <p class="fw-bold"><em>"Turning ideas into apps and data into decisions."</em></p>
+        <a href="#contact" class="btn btn-light btn-lg me-2">Contact Me</a>
+        <a href="assets/files/TristanAnyayahan_resume.pdf" class="btn btn-outline-light btn-lg" target="_blank">📄 Resume</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- About / Skills / Education / Certificates Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Left Side: About Me + Skills -->
+      <div class="col-md-8">
+        
+        <!-- About Me -->
+        <div class="mb-5">
+          <h2>About Me</h2>
+          <p>
+            I am a recent Computer Science graduate with a strong foundation in software development, data analysis, and problem-solving. 
+            Passionate about building user-friendly applications and uncovering insights from data, I enjoy working across both 
+            frontend and backend development. With adaptability and a continuous drive to learn, I am eager to contribute to 
+            innovative projects where I can apply my skills and grow as a technology professional.
+          </p>
+          <p>
+            During my academic journey, I gained hands-on experience in developing projects that involved web development, database management, 
+            and data-driven solutions. I am proficient in programming languages such as C++, Java, Python, and JavaScript, and familiar with 
+            frameworks like React, Bootstrap, and PHP for web applications. I also have experience working with SQL, MongoDB, and Firebase for 
+            data management, along with tools like Excel for analysis.
+          </p>
+          <p>
+            I am motivated by opportunities where I can collaborate with others, solve meaningful problems, and continuously expand my 
+            technical expertise. Whether it’s building applications, analyzing data, or supporting backend systems, I strive to deliver 
+            efficient, reliable, and impactful solutions.
+          </p>
+        </div>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-5">
+          <div class="container">
+            <h2>Tech Stack</h2>
+
+            <!-- Frontend -->
+            <div class="mb-4">
+              <h4 class="text-primary">Frontend</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">HTML</li>
+                <li class="list-inline-item">CSS</li>
+                <li class="list-inline-item">JavaScript</li>
+                <li class="list-inline-item">Bootstrap</li>
+                <li class="list-inline-item">Angular</li>
+                <li class="list-inline-item">React</li>
+                <li class="list-inline-item">Ionic</li>
+              </ul>
+            </div>
+
+            <!-- Backend -->
+            <div class="mb-4">
+              <h4 class="text-success">Backend</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">PHP</li>
+                <li class="list-inline-item">Python</li>
+                <li class="list-inline-item">Java</li>
+                <li class="list-inline-item">Node.js</li>
+                <li class="list-inline-item">Go</li>
+                <li class="list-inline-item">C++</li>
+              </ul>
+            </div>
+
+            <!-- Databases & Data Tools -->
+            <div>
+              <h4 class="text-warning">Databases & Data Tools</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">SQL</li>
+                <li class="list-inline-item">MongoDB</li>
+                <li class="list-inline-item">Firebase</li>
+                <li class="list-inline-item">Excel</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Spacer -->
+      <div class="col-md-1"></div>
+
+      <!-- Right Side: Education + Certificates -->
+      <div class="col-md-3">
+
+        <!-- Education -->
+        <div class="mb-5">
+          <h2 class="mb-4">Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h5>Bachelor of Science in Computer Science</h5>
+              <p class="mb-1"><strong>Batangas State University - The National Engineering University</strong></p>
+              <small class="text-muted d-block">2021 – 2025</small>
+              <small class="text-muted d-block">With a GWA of 1.58 or 94%</small>
+            </div>
+            <div class="timeline-item">
+              <h5>Senior High School</h5>
+              <p class="mb-1"><strong>Lobo Senior High School</strong></p>
+              <small class="text-muted d-block">2019 – 2021</small>
+              <small class="text-muted d-block">Graduated with High Honors</small>
+            </div>
+            <div class="timeline-item">
+              <h5>Junior High School</h5>
+              <p class="mb-1"><strong>Masaguitsit-Banalo National High School</strong></p>
+              <small class="text-muted d-block">2015 – 2019</small>
+              <small class="text-muted d-block">Graduated as Salutatorian</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificates -->
+        <div>
+          <h2 class="mb-4">Certificates</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div>
+                <h5>Certified Research Data Analyst (CRDA™)</h5>
+                <small class="text-muted d-block">Visionary Training Center</small>
+                <small class="text-muted d-block">Issued Aug 2025</small>
+                <a href="assets/certificates/CRDA™ eCertificate.pdf" target="_blank" class="cert-link">View Credential</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <h5>Build a Secure Google Cloud Network</h5>
+                <small class="text-muted d-block">Google</small>
+                <small class="text-muted d-block">Issued Dec 2024</small>
+                <a href="https://www.cloudskillsboost.google/public_profiles/41d8a6d4-07d7-49c1-ac2c-784a0a7f7f01/badges/13318332" target="_blank" class="cert-link">View Credential</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <h5>Google Cloud Computing Foundations: Data, ML, and in Google Cloud</h5>
+                <small class="text-muted d-block">Google</small>
+                <small class="text-muted d-block">Issued Dec 2024</small>
+                <a href="https://www.cloudskillsboost.google/public_profiles/41d8a6d4-07d7-49c1-ac2c-784a0a7f7f01/badges/13317898" target="_blank" class="cert-link">View Credential</a>
+              </div>
+            </div>
+        
+          </div>
+
+          <!-- Show only if more than 4 certificates -->
+          <div class="mt-3">
+            <a href="certificates.php" class="btn btn-link p-0">See More &raquo;</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- row -->
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Projects</h2>
+
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+          <img src="assets/images/brain_mri_app.png" class="card-img-top" alt="CNN-KD Fractal Image Compression System">
+          <div class="card-body">
+            <h5 class="card-title">CNN-KD Fractal Image Compression System</h5>
+            <p class="card-text">Our thesis project, “Enhanced Compression Time Efficiency of Brain MRI Fractal Image Compression 
+              Using CNN-Guided and KD-Tree Optimized Encoding,” introduces an application that helps hospitals efficiently compress 
+              and store brain MRI images. By combining convolutional neural networks (CNN) with KD-tree optimization, our system 
+              speeds up the compression process while maintaining high image quality. This approach ensures that medical images 
+              remain accurate for diagnosis, while also reducing storage requirements and improving accessibility within hospital 
+              data systems.</p>
+            <p class="mb-1"><strong>Tech Stack:</strong></p>
+            <ul class="list-inline">
+              <li class="list-inline-item">Python</li>
+              <li class="list-inline-item">PyTorch (CNN)</li>
+              <li class="list-inline-item">Scikit-learn (KD-tree)</li>
+              <li class="list-inline-item">NumPy</li>
+              <li class="list-inline-item">Pandas</li>
+              <li class="list-inline-item">Matplotlib</li>
+              <li class="list-inline-item">Seaborn</li>
+            </ul>
+            <a href="https://github.com/tristanyayahan/ThesisFractalCNN.git" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+          <img src="assets/images/apex_alliance.png" class="card-img-top" alt="Apex Alliance: Building Inventory Management System">
+          <div class="card-body">
+            <h5 class="card-title">Apex Alliance: Building Inventory Management System</h5>
+            <p class="card-text">This project proposes the development of a Building Inventory System for Batangas State University - 
+              The National Engineering University, Alangilan Campus. The system provides a web-based platform for efficiently tracking 
+              and managing buildings, rooms, and assets, reducing the risks of manual inventory methods while supporting accurate 
+              decision-making. Developed using the Rapid Application Development (RAD) approach, it ensures active user collaboration 
+              and quick iteration of features. With role-based access for admins, staff, and guests, the system offers real-time 
+              analytics, PDF report generation, and a user-friendly interface built on Node.js, React.js, and MongoDB. In this project, 
+              my role is as one of the back-end developers, focusing on building and maintaining the server-side logic and database 
+              integration to support the system’s functionality.</p>
+            <p class="mb-1"><strong>Tech Stack:</strong></p>
+            <ul class="list-inline">
+              <li class="list-inline-item">Node.js</li>
+              <li class="list-inline-item">React.js</li>
+              <li class="list-inline-item">MongoDB</li>
+              <li class="list-inline-item">jsPDF</li>
+              <li class="list-inline-item">RAD</li>
+            </ul>
+            <a href="https://github.com/jvnthny-espiritu/apexalliance-building-ims.git" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <!-- add new project
+      <div class="col-md-4">
+        <div class="card shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+          <img src="assets/images/___" class="card-img-top" alt="___">
+          <div class="card-body">
+            <h5 class="card-title">___</h5>
+            <p class="card-text">___</p>
+            <p class="mb-1"><strong>Tech Stack:</strong></p>
+            <ul class="list-inline">
+              <li class="list-inline-item">___</li>
+              <li class="list-inline-item">___</li>
+            </ul>
+            <a href="___" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <!-- add projects in new row
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+          <img src="assets/images/___" class="card-img-top" alt="___">
+          <div class="card-body">
+            <h5 class="card-title">___</h5>
+            <p class="card-text">___</p>
+            <p class="mb-1"><strong>Tech Stack:</strong></p>
+            <ul class="list-inline">
+              <li class="list-inline-item">___</li>
+              <li class="list-inline-item">___</li>
+            </ul>
+            <a href="___" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <form action="contact.php" method="POST" class="w-75 mx-auto">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="subject" class="form-label">Subject:</label>
+        <input type="text" class="form-control" id="subject" name="subject" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark text-white text-center py-4">
+  <p>&copy; 2025 Tristan Anyayahan</p>
+  <div class="mt-2">
+    <a href="https://github.com/tristanyayahan" target="_blank" class="footer-link mx-2">
+      <i class="fab fa-github"></i> GitHub
+    </a> |
+    <a href="https://www.linkedin.com/in/tristanyayahan/" target="_blank" class="footer-link mx-2">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a> |
+    <a href="tel:+639452157084" class="footer-link mx-2">
+      <i class="fas fa-phone"></i> +63 945 215 7084
+    </a>
+  </div>
+</footer>
+
+<!-- Projects Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Project Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" class="img-fluid rounded mb-3" alt="">
+        <p id="modalDesc"></p>
+        <div id="projectModalStack" class="mt-3 text-start">
+          <p class="mb-1"><strong>Tech Stack:</strong></p>
+          <ul id="modalTechStack" class="list-inline"></ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a id="modalLink" href="#" class="btn btn-primary" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
