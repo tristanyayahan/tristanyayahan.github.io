@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Alerts ---
+  // --- Alerts (global) ---
   const alertBox = document.getElementById("alertBox");
   if (alertBox) {
     setTimeout(() => {
@@ -102,5 +102,55 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleBtn.classList.add("btn-outline-light");
       }
     });
+  }
+
+  // --- Contact Form with EmailJS ---
+  const contactForm = document.getElementById("contactForm");
+  const formAlert = document.getElementById("formAlert");
+
+  if (contactForm) {
+    const submitBtn = contactForm.querySelector("button[type='submit']");
+
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Disable button & show loading text
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Sending...";
+      }
+
+      emailjs.sendForm("service_nxz2jwh", "template_ab6moce", this)
+        .then(() => {
+          showFormAlert("✅ Message sent successfully!", "success");
+          contactForm.reset();
+        })
+        .catch((error) => {
+          showFormAlert("❌ Failed to send: " + error.text, "danger");
+        })
+        .finally(() => {
+          // Restore button
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Send Message";
+          }
+        });
+    });
+  }
+
+  function showFormAlert(message, type) {
+    if (!formAlert) return;
+    formAlert.className = `alert alert-${type} text-center`;
+    formAlert.textContent = message;
+    formAlert.classList.remove("d-none");
+
+    // auto-hide after 4s
+    setTimeout(() => {
+      formAlert.classList.add("fade-out");
+      setTimeout(() => {
+        formAlert.className = "d-none";
+        formAlert.textContent = "";
+      }, 600);
+    }, 4000);
   }
 });
