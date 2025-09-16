@@ -323,15 +323,14 @@ body.dark-mode #skills ul li:hover {
 }
 
 .card-text {
-  flex-grow: 1;
+  flex-grow: 0;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 5.5em;
-  margin-bottom: 0.75rem; /* spacing before Tech Stack */
-  flex-grow: 0; /* prevent stretching */
+  margin-bottom: 0.75rem;
 }
 
 .card .btn {
