@@ -330,6 +330,8 @@ body.dark-mode #skills ul li:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 5.5em;
+  margin-bottom: 0.75rem; /* spacing before Tech Stack */
+  flex-grow: 0; /* prevent stretching */
 }
 
 .card .btn {

@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
       alertBox.classList.add("fade-out");
       setTimeout(() => {
         if (alertBox && alertBox.parentNode) alertBox.remove();
-      }, 600); // wait for fade-out transition
-    }, 4000); // show for 4s
+      }, 600);
+    }, 4000);
   }
 
   // --- Theme Toggle (only if present) ---
