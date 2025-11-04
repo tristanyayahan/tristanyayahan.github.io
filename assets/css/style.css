@@ -107,6 +107,11 @@ body.dark-mode .hero-header .btn-outline-light {
   color: #fff;
 }
 
+body.dark-mode .hero-header .btn-outline-light:hover {
+  background: #000;
+  color: #fff;
+}
+
 
 /* ===== About Section ===== */
 #about p {
