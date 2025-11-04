@@ -1,0 +1,154 @@
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Left Side: About Me + Skills -->
+      <div class="col-md-8">
+        
+        <!-- About Me -->
+        <div class="mb-5">
+          <h2>About Me</h2>
+          <p>
+            I am a recent Computer Science graduate with a strong foundation in software development, data analysis, and problem-solving. 
+            Passionate about building user-friendly applications and uncovering insights from data, I enjoy working across both 
+            frontend and backend development. With adaptability and a continuous drive to learn, I am eager to contribute to 
+            innovative projects where I can apply my skills and grow as a technology professional.
+          </p>
+          <p>
+            During my academic journey, I gained hands-on experience in developing projects that involved web development, database management, 
+            and data-driven solutions. I am proficient in programming languages such as C++, Java, Python, and JavaScript, and familiar with 
+            frameworks like React, Bootstrap, and PHP for web applications. I also have experience working with SQL, MongoDB, and Firebase for 
+            data management, along with tools like Excel for analysis.
+          </p>
+          <p>
+            I am motivated by opportunities where I can collaborate with others, solve meaningful problems, and continuously expand my 
+            technical expertise. Whether it’s building applications, analyzing data, or supporting backend systems, I strive to deliver 
+            efficient, reliable, and impactful solutions.
+          </p>
+        </div>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-5">
+          <div class="container">
+            <h2>Tech Stack</h2>
+
+            <!-- Frontend -->
+            <div class="mb-4">
+              <h4 class="text-primary">Frontend</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">HTML</li>
+                <li class="list-inline-item">CSS</li>
+                <li class="list-inline-item">JavaScript</li>
+                <li class="list-inline-item">Bootstrap</li>
+                <li class="list-inline-item">Angular</li>
+                <li class="list-inline-item">React</li>
+                <li class="list-inline-item">Ionic</li>
+              </ul>
+            </div>
+
+            <!-- Backend -->
+            <div class="mb-4">
+              <h4 class="text-success">Backend</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">PHP</li>
+                <li class="list-inline-item">Python</li>
+                <li class="list-inline-item">Java</li>
+                <li class="list-inline-item">Node.js</li>
+                <li class="list-inline-item">Go</li>
+                <li class="list-inline-item">C++</li>
+              </ul>
+            </div>
+
+            <!-- Databases & Data Tools -->
+            <div>
+              <h4 class="text-warning">Databases & Data Tools</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">SQL</li>
+                <li class="list-inline-item">MongoDB</li>
+                <li class="list-inline-item">Firebase</li>
+                <li class="list-inline-item">Excel</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Spacer -->
+      <div class="col-md-1"></div>
+
+      <!-- Right Side: Education + Certificates -->
+      <div class="col-md-3">
+
+        <!-- Education -->
+        <div class="mb-5">
+          <h2 class="mb-4">Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h5>Bachelor of Science in Computer Science</h5>
+              <p class="mb-1"><strong>Batangas State University - The National Engineering University</strong></p>
+              <small class="text-muted d-block">2021 – 2025</small>
+              <small class="text-muted d-block">GWA: 1.58 or 94%</small>
+            </div>
+            <div class="timeline-item">
+              <h5>Senior High School</h5>
+              <p class="mb-1"><strong>Lobo Senior High School</strong></p>
+              <small class="text-muted d-block">2019 – 2021</small>
+              <small class="text-muted d-block">High Honors</small>
+            </div>
+            <div class="timeline-item">
+              <h5>Junior High School</h5>
+              <p class="mb-1"><strong>Masaguitsit-Banalo National High School</strong></p>
+              <small class="text-muted d-block">2015 – 2019</small>
+              <small class="text-muted d-block">Salutatorian | Honor</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificates -->
+        <div>
+          <h2 class="mb-4">Certificates</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div>
+                <h5>Certified Research Data Analyst (CRDA™)</h5>
+                <small class="text-muted d-block">Visionary Training Center</small>
+                <small class="text-muted d-block">Issued Aug 2025</small>
+                <a href="assets/certificates/CRDA™ eCertificate.pdf" target="_blank" class="cert-link">View Credential</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <h5>Build a Secure Google Cloud Network</h5>
+                <small class="text-muted d-block">Google</small>
+                <small class="text-muted d-block">Issued Dec 2024</small>
+                <a href="https://www.cloudskillsboost.google/public_profiles/41d8a6d4-07d7-49c1-ac2c-784a0a7f7f01/badges/13318332" target="_blank" class="cert-link">View Credential</a>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <h5>Google Cloud Computing Foundations: Data, ML, and in Google Cloud</h5>
+                <small class="text-muted d-block">Google</small>
+                <small class="text-muted d-block">Issued Dec 2024</small>
+                <a href="https://www.cloudskillsboost.google/public_profiles/41d8a6d4-07d7-49c1-ac2c-784a0a7f7f01/badges/13317898" target="_blank" class="cert-link">View Credential</a>
+              </div>
+            </div>
+        
+          </div>
+
+          <div class="mt-3">
+            <a href="certificates.html" class="btn btn-link p-0">See More &raquo;</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- row -->
+  </div>
+
+  <script>
+    document.getElementById("viewCerts").addEventListener("click", async () => {
+      const res = await fetch("components/certificates.html");
+      const html = await res.text();
+      document.getElementById("certsContainer").innerHTML = html;
+    });
+  </script>
+</section>
