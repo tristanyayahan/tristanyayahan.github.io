@@ -10,7 +10,6 @@
       document.body.classList.remove('dark-mode');
     }
   } catch (e) {
-    // ignore if localStorage unavailable
   }
 })();
 
@@ -26,12 +25,28 @@ const components = [
 
 async function loadComponents() {
   const app = document.getElementById("app");
+  const preloader = document.getElementById("preloader");
 
+  // Load all components
   for (let file of components) {
     const res = await fetch(`components/${file}.html`);
     const html = await res.text();
     app.insertAdjacentHTML("beforeend", html);
   }
+
+  // Wait for all images in #app to load
+  const images = app.querySelectorAll("img");
+  const imagePromises = Array.from(images).map(img => {
+    if (img.complete) return Promise.resolve();
+    return new Promise(resolve => {
+      img.onload = img.onerror = resolve;
+    });
+  });
+
+  await Promise.all(imagePromises);
+
+  // Hide preloader after images load
+  preloader.classList.add("hidden");
 
   // Initialize EmailJS after all components are loaded
   emailjs.init("Fi-OOBVIwwYITqjAC");
