@@ -551,7 +551,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Courier New", monospace;
+  font-family: "Press Start 2P", monospace;
   font-size: 1.5rem;
   letter-spacing: 1px;
   z-index: 9999;
@@ -563,10 +563,14 @@ footer {
   visibility: hidden;
 }
 
-.loading-text {
+.preloader-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+}
+
+.loading-text {
+  letter-spacing: 1px;
 }
 
 .dots::after {
@@ -587,4 +591,10 @@ footer {
   80%, 100% {
     content: '...';
   }
+}
+
+.skate {
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
 }
